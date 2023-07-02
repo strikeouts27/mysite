@@ -7,8 +7,6 @@ Can you better explain this aspect of the include function?
 
 Include() function The idea behind include() is to make it easy to plug-and-play URLs. Since polls are in their own URLconf (polls/urls.py), they can be placed under “/polls/”, or under “/fun_polls/”, or under “/content/polls/”, or any other path root, and the app will still work.
 
-
-
 tutorial part 1 
 
 it seems that when I exit out of virtual enivornments I have to reinstall everything again otherwise I get the bash error.
@@ -30,6 +28,10 @@ def index(request):
 1. write the view
 2. create a urls.py file. 
 3. in the urls.py file include this code 
+
+Views/urls are tied togather. 
+MODELS/INSTALLEDAPPS are tied togather
+
 
 from django.urls import path
 
@@ -57,7 +59,7 @@ by telling django about this app we can than run the migrations to create the da
 Process: How to see what you have in objects in django. 
 
 1. import the models. 
-2. use model_name.objects.all()-> or for the polls app-> Question.objects.all() to retrieve all of the question you have created. at this point it should be 0 QuerySet[
+2. use model_name.objects.all()-> or for the polls app-> Question.objects.all() to retrieve all of the question you have created. at this point it should be 0 QuerySet
 3. we need to create questions and that requires two parameters. we know this because in models.py we have two python attributes or django field names. so to create this said question in the API shell we type out a variable name and set it equal to the model_name(attribute1=, attribute2 =)-> in the case of the polls app question_text="Whats new?", pub_date=timezone.now()-> this will put the exact moment in time it was created which satsifes that. By doing this we instantate the python object.
 4. Use variable_name.save() to actually save the object. 
 5. Use the variablename.id to get the id field for the first value. 
@@ -88,14 +90,19 @@ The migrate command looks at the INSTALLED_APPS setting and creates any necessar
 models
 Now we’ll define your models – essentially, your database layout, with additional metadata.
 
-A model is the single, definitive source of information about your data. It contains the essential fields and behaviors of the data you’re storing. Django follows the DRY Principle. The goal is to define your data model in one place and automatically derive things from it.
+If you’re interested, you can also run python manage.py check; this checks for any problems in your project without making migrations or touching the database.
+
+
 
 from django.db import models
 models.Model-> use this in the parameter argument to make  it a parameter. 
 Here, each model is represented by a class that subclasses django.db.models.Model. Each model has a number of class variables, each of which represents a database field in the model.
 
-To include the app in our project, we need to add a reference to its configuration class in the INSTALLED_APPS setting. The PollsConfig class is in the polls/apps.py file, so its dotted path is 'polls.apps.PollsConfig'. Edit the mysite/settings.py file and add that dotted path to the INSTALLED_APPS setting. It’ll look like this:
+MODELS/INSTALLEDAPPS are tied togather. down the line you will need to tell the admin that the question objects have an admin interface. 
 
+change your models/ run python manage.py makemigrations/ run python manage.py migrate.
+
+A QuerySet represents a collection of objects from your database. It can have zero, one or many filters. Filters narrow down the query results based on the given parameters. In SQL terms, a QuerySet equates to a SELECT statement, and a filter is a limiting clause such as WHERE or LIMIT.
 
 
 part 3 
