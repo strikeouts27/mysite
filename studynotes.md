@@ -107,6 +107,16 @@ A QuerySet represents a collection of objects from your database. It can have ze
 
 part 3 
 
+loader 
+
+context 
+
+render()
+
+The context is a dictionary mapping template variable names to Python objects.
+
+do not change urls in templates. change them in urls.py. have the name= value be the same in urls.py as the template name=
+
 - django template system uses dot lookup syntax to access variable attributes. It does a search for a dictionary in the object, than by the attribute and than by a list-index lookup.
 
 - {% for %}: This tag is used to iterate over a collection, such as a list or queryset. It allows you to loop through the elements and perform actions for each item.
