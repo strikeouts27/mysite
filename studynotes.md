@@ -1,4 +1,7 @@
 # mysite
+
+# if an app has not been installed in the past 2 years than choose something else to utilize your project. 
+
 Notes in my own words
 learning python has a youtube channel that breaks down how to do this step by step.
 
@@ -107,16 +110,61 @@ A QuerySet represents a collection of objects from your database. It can have ze
 
 part 3 
 
-loader 
+if I see a %s that is a placeholder for whatever value I put in after the % sign the next time I use it. 
 
-context 
+%s string
+%d is a decimal, number, or integer. 
+%f will print loats
+%g is a generic number 
+% itself is just a variable. 
+{$ url $} and name are connected 
+
+detail() 
+
+loader ()
+
+context are used in {{ }} context is information stored in a dictionary.
+{{}} once you bring this context through it will become static. 
+nothing came through-> I must have mislabeld something. 
+if python comes through it was a bracket problem. 
+
+{% %} template tag -> takes in a request, operates functions on them, and than returns back to the place it was called. like a rotating door 
+{# ignore this #}
+{{ context we want to bring through }}
+{ | filter } there are roughly 35 filters you can use. 
+include()
+
+app_name = has two features. it is a label for the programmers to see what urls they are looking at. AND
+app_name is used by the url dispatcher/searcher and will use the app name as a reference for the search.
+in the html template tag you can use the (app_name variable:name= value or path name) to reference the path you want in the tag. 
+and 
+
+request() -> the users submitted action to the web page which. 
+Research what is contained in HTTP request. 
 
 render()
-
+-> has to have a request, it needs the address of an html file or template. context -> variables that you have saved in the project.
+context can be an empty dictionary or it can be a dictionary filled with variables that you have made.  
 The context is a dictionary mapping template variable names to Python objects.
 
+Raising 404 error-> 
 do not change urls in templates. change them in urls.py. have the name= value be the same in urls.py as the template name=
 
+get_object_or_404()
+tries to get the information requested and than if it fails it raises the 404. get is always looking for a one object. 
+
+reverse() go to the url conf and fetch a url. its for redirects. you can send it context. look at django.urls utility functions. 
+reverse grabs information from urls.py. it works like a formatted f string.
+
+
+if I am looking for multiple things get_list_or_404(). 
+input output 
+what does this view do? -> .... 
+listing something, doing something. 
+1. project outline 
+2. idea journal and build out application ideas->
+
+django <-> python are connected so if I cannot find the answer in 
 - django template system uses dot lookup syntax to access variable attributes. It does a search for a dictionary in the object, than by the attribute and than by a list-index lookup.
 
 - {% for %}: This tag is used to iterate over a collection, such as a list or queryset. It allows you to loop through the elements and perform actions for each item.
@@ -127,6 +175,25 @@ However, different apps and projects exists and name clashing can happen. app_na
 - {% url %}: The {% url %} tag is used to generate URLs for named URL patterns in your Django application. It takes the name of the URL pattern and any necessary arguments or keyword arguments.
 
 part 4 forms:
+form.legal_name
+under the write a minimal form 
+according to the django tutorial you can use the for loop code. 
+or you can use the mike shortcut and use div tags in div tags. 
+
+reverse() see prior notes in part 3
+
+Queryset is a group of objects. 
+we can use for loops on a query set to go over the attributes (variables) of objects. and than 
+
+class based views have a lot of functionality but they come with drawbacks. one object at a time, classed based views are great.
+multiple objects-> harder for class based views to work with. 
+people want customizable actions on their projects.
+
+does it fit my use case? class based views vs class based views.
+
+always try to write for your apps with expandablity. -> more abstract things. not as simple, everything is always expandable, 
+
+choice_set.all-> 
 
 -
 
