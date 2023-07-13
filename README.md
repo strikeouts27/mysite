@@ -1,6 +1,5 @@
 # mysite
-generate a secret key and save it as an enviornemnt variable called SECRET_KEY or something like that.
 
-https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/#secret-key
+This project is the offical tuturoial project for Django. In order to activate the project and see it run the command python manage.py runserver and than go to the very end of the url and /polls.
 
-
+I did not make a home page because the tutorial did not instruct me to and this was more about followings its instructions and not adding to or removing from it.
